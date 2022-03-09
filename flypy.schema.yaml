@@ -1,0 +1,155 @@
+# Rime schema settings
+# encoding: utf-8
+schema:
+  schema_id: flypy
+  name: 小鹤音形
+  version: "10.8.6"
+  author:
+    - 方案设计：何海峰 <flypy@qq.com>
+  description: |
+      小鹤音形
+switches:
+  - name: ascii_mode
+    reset: 0
+   # states: [ 中文, 英文 ]
+  - name: full_shape
+   # states: [ 半角, 全角 ]
+  - name: simplification
+   # states: [ 简, 繁 ]
+    reset: 0
+  - name: ascii_punct
+   # states: [ 。，, ．， ]
+    reset: 0
+punctuator:
+  import_preset: default
+  full_shape:
+    "<": "《"
+    ">": "》"
+    "/": "／"
+    "$": "＄"
+    "(": "（"
+    ")": "）"
+    "|": "｜"
+    "[": "【"
+    "]": "】"
+    "{": "｛"
+    "}": "｝"
+    "*": "＊"
+    "#": "＃"
+    "~": "～"
+    "\\": "＼"
+  half_shape:
+    "'": "\"" 
+    "[": "["
+    "]": "]"
+    "{": "{"
+    "}": "}"
+    "*": "*"
+    "%": "%"
+    "<" : "<"
+    ">" : ">"
+    "/": "/"
+    "\\": "\\"
+    "$": "$"
+    "(": "("
+    ")":  ")"
+    "|": "|"
+    "~": "~"
+recognizer:
+  import_preset: default
+  patterns:
+    reverse_lookup: "[a-z`]*`+[a-z`]*"    #反查编码表达式
+    expression: "^=.*$"                   #计算器表达式
+    uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"  #首码大写输入英文
+    url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$" #网址表达式
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - table_translator
+    - lua_translator@date_translator
+    - lua_translator@time_translator
+    - table_translator@custom_phraseVD
+    - table_translator@custom_phraseXT
+    - table_translator@custom_phraseYH
+    - table_translator@custom_phraseBQ
+    - reverse_lookup_translator
+    - lua_translator@calculator_translator
+  filters:
+    - simplifier
+    - simplifier@simplification
+    - uniquifier
+speller:
+  alphabet: "abcdefghijklmnopqrstuvwxyz`"
+  max_code_length: 4
+  auto_select: true   #顶字上屏
+  auto_select_pattern: ^;.$|^\w{4}$
+  auto_clear: manual         #manual|auto|max_length 空码按键确清屏|空码自动清|最长码时后码清屏
+translator:
+  dictionary: flypy
+  enable_charset_filter: false   #是否開啓字符集過濾
+  enable_sentence: false         #是否開啓自動造句
+  enable_completion: true        #编码提示开关
+  enable_user_dict: false        #是否開啓用戶詞典
+  disable_user_dict_for_patterns:
+    - "^z.*$" 
+simplification:
+  opencc_config: s2tw.json
+  option_name: simplification
+  tips: all     #简繁对照
+custom_phraseVD:
+  dictionary: ""
+  user_dict: dicts/flypy_top
+  db_class: stabledb
+  enable_sentence: false
+  enable_completion: false
+  initial_quality: 0 #用户词和系统词重码置顶 〔0- -1代表词频〕
+custom_phraseXT:
+  dictionary: ""
+  user_dict: dicts/flypy_sys
+  db_class: stabledb
+  enable_sentence: false
+  enable_completion: fasle
+  initial_quality: -1 #本表词和系统词重码居后
+custom_phraseYH:
+  dictionary: ""
+  user_dict: dicts/flypy_user
+  db_class: stabledb
+  enable_sentence: false
+  enable_completion: true
+  initial_quality: -1 #用户词和系统词重码居后
+custom_phraseBQ:
+  dictionary: ""
+  user_dict: dicts/flypy_plus
+  db_class: stabledb
+  enable_sentence: false
+  enable_completion: false
+  initial_quality: -1 #和系统词重码时居后
+reverse_lookup:
+  dictionary: flypydz
+  comment_format:
+    - xform/ / /
+
+key_binder:
+  #import_preset: default #方案切换相关；
+  bindings:
+    - {accept: Tab, send: Page_Down, when: has_menu} # ]下翻页
+    - {accept: Alt+Tab, send: Page_Up, when: paging} # [上翻页
+    - {accept: semicolon, send: 2, when: has_menu} #分号次选
+    - {accept: "Alt+space", toggle: full_shape, when: always} #切换全半角
+    - {accept: "Control+period", toggle: ascii_punct, when: always} #切换中英标点
+    - {accept: "Control+j", toggle: simplification, when: always} #切换简繁 

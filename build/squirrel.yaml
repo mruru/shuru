@@ -1,0 +1,91 @@
+__build_info:
+  rime_version: 1.7.3
+  timestamps:
+    squirrel: 1613228858
+    squirrel.custom: 1646056086
+app_options:
+  co.zeit.hyper:
+    ascii_mode: true
+  com.alfredapp.Alfred:
+    ascii_mode: true
+  com.apple.Spotlight:
+    ascii_mode: true
+  com.apple.Terminal:
+    ascii_mode: true
+    no_inline: true
+  com.apple.dt.Xcode:
+    ascii_mode: true
+  com.barebones.textwrangler:
+    ascii_mode: true
+  com.blacktree.Quicksilver:
+    ascii_mode: true
+  com.github.atom:
+    ascii_mode: true
+  com.google.Chrome:
+    inline: true
+  com.googlecode.iterm2:
+    ascii_mode: true
+    no_inline: true
+  com.macromates.TextMate.preview:
+    ascii_mode: true
+  com.microsoft.VSCode:
+    ascii_mode: true
+  "com.runningwithcrayons.Alfred-2":
+    ascii_mode: true
+  com.sublimetext.2:
+    ascii_mode: true
+  org.gnu.Aquamacs:
+    ascii_mode: true
+  org.gnu.Emacs:
+    ascii_mode: true
+    no_inline: true
+  org.vim.MacVim:
+    ascii_mode: true
+    no_inline: true
+    vim_mode: true
+  ru.keepcoder.Telegram:
+    inline: true
+chord_duration: 0.1
+config_version: 0.37
+preset_color_schemes:
+  black:
+    author: placeless
+    back_color: 0x282828
+    candidate_format: "%c %@"
+    comment_text_color: 0x0FFAD3
+    corner_radius: 7
+    font_face: "PingFangSC-Regular"
+    font_point: 17
+    hilited_candidate_back_color: 0xF0F0F0
+    hilited_candidate_label_color: 0x282828
+    hilited_candidate_text_color: 0x282828
+    hilited_comment_text_color: 0x282828
+    label_color: 0xF0F0F0
+    label_font_point: 17
+    name: "药丸／Pill"
+    text_color: 0xF0F0F0
+  white:
+    author: placeless
+    back_color: 0xFFFFFF
+    candidate_format: "%c %@"
+    comment_text_color: 0x0E26C2
+    corner_radius: 5
+    font_face: "PingFangSC-Regular"
+    font_point: 17
+    hilited_candidate_back_color: 0xFFF0E4
+    hilited_candidate_label_color: 0xFFF0E4
+    hilited_candidate_text_color: 0xEE6E00
+    hilited_comment_text_color: 0xFFFFFF
+    label_color: 0x424242
+    label_font_point: 17
+    name: "冷漠／Apathy"
+    text_color: 0x424242
+show_notifications_via_notification_center: true
+show_notifications_when: appropriate
+style:
+  candidate_list_layout: linear
+  color_scheme: black
+  horizontal: true
+  inline_preedit: true
+  text_orientation: horizontal
+us_keyboard_layout: false
