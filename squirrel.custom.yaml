@@ -1,13 +1,9 @@
 patch:
-  show_notifications_via_notification_center: true
   style:
-    color_scheme: white
+    color_scheme: black
     horizontal: true # deprecated
     candidate_list_layout: linear # stacked | linear
-    text_orientation: horizontal
     inline_preedit: true
-  menu:
-  page_size: 5 #候选数量
 #此处定义外观皮肤
   preset_color_schemes:
     white:
@@ -16,8 +12,8 @@ patch:
       comment_text_color: 0x555555
       corner_radius: 6
       font_face: PingFangSC-Regular
-      font_point: 16
-      label_font_point: 16
+      font_point: 17
+      label_font_point: 17
       back_color: 0xFFFFFF
       text_color: 0x333333
       label_color: 0x555555
@@ -32,8 +28,8 @@ patch:
       comment_text_color: 0x0FFAD3
       corner_radius: 6  
       font_face: PingFangSC-Regular
-      font_point: 16
-      label_font_point: 16
+      font_point: 17
+      label_font_point: 17
       back_color: 0x282828
       text_color: 0xF0F0F0
       label_color: 0xF0F0F0

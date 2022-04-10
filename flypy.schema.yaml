@@ -2,23 +2,23 @@
 # encoding: utf-8
 schema:
   schema_id: flypy
-  name: 小鹤音形
+  name: 鹤形
   version: "10.8.6"
   author:
     - 方案设计：何海峰 <flypy@qq.com>
   description: |
-      小鹤音形
+      鹤形
 switches:
   - name: ascii_mode
     reset: 0
-   # states: [ 中文, 英文 ]
+    states: [ 中文, 英文 ]
   - name: full_shape
-   # states: [ 半角, 全角 ]
+    states: [ 半角, 全角 ]
   - name: simplification
-   # states: [ 简, 繁 ]
+    states: [ 简, 繁 ]
     reset: 0
   - name: ascii_punct
-   # states: [ 。，, ．， ]
+    states: [ 。，, ．， ]
     reset: 0
 punctuator:
   import_preset: default
@@ -37,7 +37,7 @@ punctuator:
     "*": "＊"
     "#": "＃"
     "~": "～"
-    "\\": "＼"
+    "\\": "、"
   half_shape:
     "'": "\"" 
     "[": "["
@@ -49,19 +49,20 @@ punctuator:
     "<" : "<"
     ">" : ">"
     "/": "/"
-    "\\": "\\"
+    "\\": "、"
     "$": "$"
     "(": "("
     ")":  ")"
     "|": "|"
     "~": "~"
 recognizer:
-  import_preset: default
   patterns:
     reverse_lookup: "[a-z`]*`+[a-z`]*"    #反查编码表达式
     expression: "^=.*$"                   #计算器表达式
     uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"  #首码大写输入英文
-    url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$" #网址表达式
+    url: "^(www[.]|http[:]|ftp[.:]|file:).*$|^[a-z]+[.].+$" #网址表达式
+menu:
+    page_size: 5 #候选数量
 engine:
   processors:
     - ascii_composer
@@ -98,17 +99,17 @@ speller:
   max_code_length: 4
   auto_select: true   #顶字上屏
   auto_select_pattern: ^;.$|^\w{4}$
-  auto_clear: manual         #manual|auto|max_length 空码按键确清屏|空码自动清|最长码时后码清屏
+  auto_clear: manual    #manual|auto|max_length 空码按键确清屏|空码自动清|最长码时后码清屏
 translator:
   dictionary: flypy
   enable_charset_filter: false   #是否開啓字符集過濾
   enable_sentence: false         #是否開啓自動造句
-  enable_completion: true        #编码提示开关
-  enable_user_dict: false        #是否開啓用戶詞典
+  enable_completion: false       #编码提示开关
+  enable_user_dict: false         #是否開啓用戶詞典
   disable_user_dict_for_patterns:
     - "^z.*$" 
 simplification:
-  opencc_config: s2tw.json
+  opencc_config: t2hk.json
   option_name: simplification
   tips: all     #简繁对照
 custom_phraseVD:
@@ -123,14 +124,14 @@ custom_phraseXT:
   user_dict: dicts/flypy_sys
   db_class: stabledb
   enable_sentence: false
-  enable_completion: fasle
+  enable_completion: false
   initial_quality: -1 #本表词和系统词重码居后
 custom_phraseYH:
   dictionary: ""
   user_dict: dicts/flypy_user
   db_class: stabledb
   enable_sentence: false
-  enable_completion: true
+  enable_completion: false
   initial_quality: -1 #用户词和系统词重码居后
 custom_phraseBQ:
   dictionary: ""
@@ -145,7 +146,6 @@ reverse_lookup:
     - xform/ / /
 
 key_binder:
-  #import_preset: default #方案切换相关；
   bindings:
     - {accept: Tab, send: Page_Down, when: has_menu} # ]下翻页
     - {accept: Alt+Tab, send: Page_Up, when: paging} # [上翻页

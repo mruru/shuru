@@ -1,4 +1,4 @@
-# coding: utf-8
+ƒƒ# coding: utf-8
 # 小鹤音形符号、二重简码等词库
 # 该文件以UTF-8编码保存
 # 编码格式：字词+Tab符+编码（词库本身有重码则还需后面+Tab符+权重，权重大者居前，权重数字随意）
@@ -1553,27 +1553,7 @@
 载誉归来	zygl
 自怨自艾	zyzy
 # emoji表情
-😓	hj
-😭	ku
-😂	xn
-😠	nu
-😳	fd
-👍	ql
-👌	ok
-👎	ro
-☕	ia
-🍺	pj
-🎂	dg
-🙏	bt
-🌹	mg
-💤	uv
-💔	ux
-🐂	nq
-🐂🚶	nr
-🐎🐎🐅🐅	mh
-🐾🐎👀🌸	gh
-🖕	cc
-🤔	sk
+
 
 # 二重简码
 又	y
@@ -1803,7 +1783,6 @@
 ‖	ofbd	72
 ∶	ofbd	71
 ＂	ofbd	70
-	ofbd	69
 ｀	ofbd	68
 ｜	ofbd	67
 点数u	ofd	100
@@ -2789,7 +2768,6 @@ m³	otl	100
 Ⅸ	oyj	30
 Ⅹ	oyu	30
 “	oz
-
 # 随心所欲   自定编码规则
 记忆	jyx
 指挥	vhf
