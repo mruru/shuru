@@ -109,7 +109,7 @@ translator:
   disable_user_dict_for_patterns:
     - "^z.*$" 
 simplification:
-  opencc_config: t2hk.json
+  opencc_config: t2s.json
   option_name: simplification
   tips: all     #简繁对照
 custom_phraseVD:
