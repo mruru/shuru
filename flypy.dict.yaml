@@ -1,23 +1,22 @@
-
 ---
 name: flypy
 version: "10.9z"
 sort: original
 import_tables:
   - 'dicts/flypy.user.top'                # 用户置顶词
-  # - 'dicts/flypy.full.top'              # 全码置顶词
+  - 'dicts/flypy.full.top'                # 全码置顶词
   - 'dicts/flypy.fast.symbols'            # 快符
   - 'dicts/flypy.primary'                 # 首选字词
   - 'dicts/flypy.secondary'               # 次选字词
   - 'dicts/flypy.three'                   # 三码填空
-  #- 'dicts/flypy.web'                     # 网站
+  - 'dicts/flypy.web'                     # 网站
   - 'dicts/flypy.emoji'                   # 表情
   - 'dicts/flypy.symbols'                 # 符号
-  #- 'dicts/flypy.wechat'                  # 微信表情
+  - 'dicts/flypy.wechat'                  # 微信表情
   - 'dicts/flypy.secondary.short.code'    # 二重简码
   - 'dicts/flypy.primary.short.word'      # 一简词
   - 'dicts/flypy.whimsicality'            # 随心所欲
-  - 'dicts/flypy.full.char'             # 全码字
-  # - 'dicts/flypy.full'                  # 全码词
+  - 'dicts/flypy.full.char'               # 全码字
+  - 'dicts/flypy.full'                    # 全码词
   - 'dicts/flypy.user'                    # 用户词库
 ...

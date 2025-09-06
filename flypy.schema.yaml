@@ -1,6 +1,5 @@
 # Rime schema settings
 # encoding: utf-8
-
 schema:
   schema_id: flypy
   name: 小鹤音形
@@ -79,15 +78,15 @@ history:
    size: 1 #重复前几次上屏
    initial_quality: 1 #首选
    
-simplification:
-  opencc_config: s2tw.json
-  option_name: simplification
-  tips: all #简繁对照
+# simplification:
+#   opencc_config: s2t.json
+#   option_name: simplification
+#   tips: all #简繁对照
 
-reverse_lookup:
-  dictionary: flypydz
-  comment_format:
-   - xform/ / /
+# reverse_lookup:
+#   dictionary: flypydz
+#   comment_format:
+#    - xform/ / /
 
 
 key_binder:
@@ -104,7 +103,7 @@ key_binder:
     - {accept: "Shift_R", send: Escape, when: composing}
     - {accept: "Shift+space", toggle: full_shape, when: always} #切换全半角
     - {accept: "Control+period", toggle: ascii_punct, when: always} #切换中英标点
-    - {accept: "Control+j", toggle: simplification, when: always} #切换简繁
+    # - {accept: "Control+j", toggle: simplification, when: always} #切换简繁
 
 recognizer:
   import_preset: default
